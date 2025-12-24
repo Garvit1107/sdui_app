@@ -8,6 +8,11 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  shelf: ^1.4.1
+  shelf_router: ^1.1.4
+
+  sdui_models:
+    path: ../sdui_models
   # path: ^1.8.0
 
 dev_dependencies:
