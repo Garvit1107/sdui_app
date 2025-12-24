@@ -19,7 +19,6 @@ ScreenModel getScreenByName(String screenName) {
       return ErrorScreenModel(
         title: 'Not Found',
         message: 'Screen "$screenName" does not exist',
-        action: NavigateAction(screen: 'home'),
       );
   }
 }

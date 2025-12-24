@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart' as io;
 
@@ -8,9 +10,7 @@ Future<void> startServer() async {
       .addMiddleware(logRequests())
       .addHandler(buildRouter().call);
 
-  final server = await io.serve(handler, 'localhost', 8080);
+  final server = await io.serve(handler, InternetAddress.anyIPv4, 8080);
 
-  print(
-    '🚀 SDUI Server running at http://${server.address.host}:${server.port}',
-  );
+  print('SDUI Server running at http://${server.address.host}:${server.port}');
 }

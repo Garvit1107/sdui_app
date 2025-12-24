@@ -1,7 +1,6 @@
 import 'vertical_screen_model.dart';
 import 'error_screen_model.dart';
 import '../components/component_model.dart';
-import '../actions/action_model.dart';
 
 abstract class ScreenModel {
   ScreenModel();
@@ -18,13 +17,7 @@ abstract class ScreenModel {
         );
 
       case 'errorScreen':
-        return ErrorScreenModel(
-          title: json['title'],
-          message: json['message'],
-          action: json['action'] != null
-              ? ActionModel.fromJson(json['action'])
-              : null,
-        );
+        return ErrorScreenModel(title: json['title'], message: json['message']);
 
       default:
         throw Exception('Unknown ScreenModel type');
